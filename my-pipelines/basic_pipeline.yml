@@ -1,0 +1,23 @@
+---
+resources:
+  - name: concourse-tutorial
+    type: git
+    source:
+      uri: https://github.com/vinothsundararajan/concourse-lab.git
+      branch: main
+jobs:
+  - name: job-pass-files
+    public: true
+    plan:
+      - get: concourse-tutorial
+      - task: ran-script-files
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source: { repository: busybox }
+          inputs:
+            - name: concourse-tutorial
+          run:
+            path: concourse-tutorial/my-pipelines/hello-world.sh
+            args: ["vinothsundararajan"]
