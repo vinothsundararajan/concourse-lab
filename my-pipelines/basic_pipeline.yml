@@ -15,9 +15,9 @@ jobs:
           platform: linux
           image_resource:
             type: registry-image
-            source: { repository: busybox }
+            source: { repository: python }
           inputs:
             - name: concourse-tutorial
           run:
-            path: concourse-tutorial/my-pipelines/hello-world.sh
+            path: concourse-tutorial/my-pipelines/hello-world.py
             args: ["vinothsundararajan"]
