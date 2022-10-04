@@ -10,8 +10,8 @@ Setting up labs for concourse-ci with help of cloud-shell
   https://concourse-ci.org
  
  ### Docker compose
-    - wget https://raw.githubusercontent.com/starkandwayne/concourse-tutorial/master/docker-compose.yml
-    - 
+    # wget https://raw.githubusercontent.com/starkandwayne/concourse-tutorial/master/docker-compose.yml
+    # cat docker-compose.yaml 
         ---
         version: "3"
 
@@ -40,7 +40,13 @@ Setting up labs for concourse-ci with help of cloud-shell
               - CONCOURSE_MAIN_TEAM_LOCAL_USER=admin
               - CONCOURSE_GARDEN_DNS_PROXY_ENABLE=true
               - CONCOURSE_WORKER_GARDEN_DNS_PROXY_ENABLE=true
-    - docker-compose up -d
+    # docker-compose up -d
   
  ### Docker image repository:
     registry-image
+    
+ ### Download fly 
+    curl 'http://localhost:8080/api/v1/cli?arch=amd64&platform=linux' -o fly   
+    chmod +x ./fly
+    mv ./fly /usr/local/bin/
+   
