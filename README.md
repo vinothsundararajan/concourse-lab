@@ -49,4 +49,13 @@ Setting up labs for concourse-ci with help of cloud-shell
     curl 'http://localhost:8080/api/v1/cli?arch=amd64&platform=linux' -o fly   
     chmod +x ./fly
     mv ./fly /usr/local/bin/
-   
+ ### Configure fly
+    #cat ~/.flyrc 
+
+      targets:
+      tutorial:
+         api: http://localhost:8080
+         team: main
+         token:
+            type: bearer
+            value: <*token-id*>
