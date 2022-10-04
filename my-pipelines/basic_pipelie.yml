@@ -1,11 +1,24 @@
 ---
-platform: linux
-image_resource:
-    type: registry-image
-    source: { repository: busybox }
-inputs:
-    - name: concourse-pipeline
-run:
-    #path: "/bin/sh"
-    path: "my-pipelines/hello-world.sh"
-    args: [ "ls" ]
+  job: 
+    - name: run-concourse-lab
+      plan: 
+        - get: concourse-lab
+        - task: 
+            config: 
+              image_resource: 
+                source: 
+                  repository: busybox
+                type: registry-image
+              inputs: 
+                - name: concourse-pipeline
+              platform: linux
+              run: 
+                args: [ "ls" ]
+                path: my-pipelines/hello-world.sh
+      public: true
+  resources: 
+    - name: concourse-lab
+      source: 
+        branch: main
+        uri: "https://github.com/vinothsundararajan/concourse-lab.git"
+      type: git
