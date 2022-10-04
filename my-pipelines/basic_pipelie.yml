@@ -1,0 +1,11 @@
+---
+platform: linux
+image_resource:
+    type: registry-image
+    source: { repository: busybox }
+inputs:
+    - name: concourse-pipeline
+run:
+    #path: "/bin/sh"
+    path: "my-pipelines/hello-world.sh"
+    args: [ "ls" ]
