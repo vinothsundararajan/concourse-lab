@@ -19,5 +19,5 @@ jobs:
           inputs:
             - name: concourse-tutorial
           run:
-            path: concourse-tutorial/my-pipelines/hello-world.py
+            path: concourse-tutorial/pipelines/hello-world.py
             args: ["vinothsundararajan"]
