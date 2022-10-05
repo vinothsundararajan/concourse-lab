@@ -2,6 +2,7 @@
 resources:
   - name: concourse-tutorial
     type: git
+    check_every: 30m
     source:
       uri: https://github.com/vinothsundararajan/concourse-lab.git
       branch: main
@@ -20,8 +21,22 @@ jobs:
               tag: latest
           inputs:
             - name: concourse-tutorial
-         outputs:
+          outputs:
             - name: concourse-app-output
           run:
             path: concourse-tutorial/ci/mvn.sh
             args: ["vinothsundararajan"]
+###
+#on_success:
+#  do:
+#  - put: maven-examples
+#    params:
+#      path: maven-examples
+#      status: success
+#on_failure:
+#  do:
+#  - put: maven-examples
+#    params:
+#      path: maven-examples
+#      status: failure
+####
