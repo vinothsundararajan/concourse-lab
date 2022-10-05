@@ -42,9 +42,7 @@ Setting up labs for concourse-ci with help of cloud-shell
               - CONCOURSE_WORKER_GARDEN_DNS_PROXY_ENABLE=true
     # docker-compose up -d
   
- ### Docker image repository:
-    registry-image
-    
+
  ### Download fly 
     curl 'http://localhost:8080/api/v1/cli?arch=amd64&platform=linux' -o fly   
     sudo chmod +x ./fly
@@ -112,3 +110,9 @@ Setting up labs for concourse-ci with help of cloud-shell
     cd -
     fi
     sleep 5
+
+ ### Docker image repository:
+    registry-image
+
+ ### Execute executor.sh and fly command configured:
+     bash ./executor.sh
