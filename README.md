@@ -1,15 +1,15 @@
 # concourse-lab
 Setting up labs for concourse-ci with help of cloud-shell
 
-### Servers from cloud-shell 
+### Servers from cloud-shell:
     https://shell.cloud.google.com
   
-### Documentation 
+### Documentation help from:
     https://concoursetutorial.com
     https://github.com/starkandwayne/concourse-tutorial
     https://concourse-ci.org
 
- ### Docker compose
+ ### Docker compose:
     # wget https://raw.githubusercontent.com/starkandwayne/concourse-tutorial/master/docker-compose.yml
     # cat docker-compose.yaml 
         ---
