@@ -5,6 +5,8 @@ sleep 5
 if [ $? -eq 0 ]; then
   echo -e "Maven clean process just begins.."
   disk_usage=$(df -hT /)
+  ls -l 
+  pwd && echo $(hostname)
   cd ..
   mvn clean
   if [ "$?" -eq 0 ]; then
