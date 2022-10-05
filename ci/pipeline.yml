@@ -6,18 +6,22 @@ resources:
       uri: https://github.com/vinothsundararajan/concourse-lab.git
       branch: main
 jobs:
-  - name: job-pass-files
+  - name: maven-build-project
     public: true
     plan:
       - get: concourse-tutorial
-      - task: ran-script-files
+      - task: pull-mvn-build
         config:
           platform: linux
           image_resource:
             type: registry-image
-            source: { repository: python }
+            source: 
+              repository: maven
+              tag: latest
           inputs:
             - name: concourse-tutorial
+         outputs:
+            - name: concourse-app-output
           run:
-            path: concourse-tutorial/pipelines/hello-world.py
+            path: concourse-tutorial/ci/mvn.sh
             args: ["vinothsundararajan"]
