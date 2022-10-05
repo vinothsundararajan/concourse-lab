@@ -4,7 +4,7 @@ Setting up labs for concourse-ci with help of cloud-shell
 ### Servers from cloud-shell:
     https://shell.cloud.google.com
   
-### Documentation help from:
+### Documentation help:
     https://concoursetutorial.com
     https://github.com/starkandwayne/concourse-tutorial
     https://concourse-ci.org
