@@ -1,7 +1,7 @@
 # concourse-lab
 Setting up labs for concourse-ci with help of cloud-shell
 
-### Servers from cloud-shell:
+### Servers from cloud-shell and aws instance:
     https://shell.cloud.google.com
   
 ### Documentation help:
