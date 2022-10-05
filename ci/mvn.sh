@@ -7,6 +7,7 @@ if [ $? -eq 0 ]; then
   disk_usage=$(df -hT /)
   ls -l 
   echo  -e "INFO: maven building in $(hostname) container at $(pwd)"
+  cd concourse-tutorial
   mvn clean
   if [ "$?" -eq 0 ]; then
     mvn install ; 
